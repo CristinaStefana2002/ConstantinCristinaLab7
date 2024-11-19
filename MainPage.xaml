@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ConstantinCristinaLab7.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25">
+
+            
+            <Image
+                Source="my_motorcycle.jpg"
+                HeightRequest="200"
+                Aspect="AspectFit"
+                SemanticProperties.Description="Personalized image" />
+
+            
+            <Label
+                Text="Welcome to Cristina's personalized page!"
+                FontSize="24"
+                FontAttributes="Bold"
+                HorizontalOptions="Center"
+                SemanticProperties.HeadingLevel="Level1" />
+
+            <Label
+                Text="This page reflects my love for exploration and adventure, inspired by the freedom and thrill of the open road. The image of my motorcycle symbolizes not just a vehicle, but a way of life—one that embraces independence, excitement, and the beauty of the journey. Whether it's about discovering new places or enjoying the simple joys of a ride, this page celebrates the spirit of adventure."
+                FontSize="18"
+                HorizontalOptions="Center"
+                SemanticProperties.HeadingLevel="Level2" />
+
+            
+            <Button
+                x:Name="CounterBtn"
+                Text="Click to interact!"
+                SemanticProperties.Hint="Counts the number of times you click"
+                Clicked="OnCounterClicked"
+                HorizontalOptions="Fill" />
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
