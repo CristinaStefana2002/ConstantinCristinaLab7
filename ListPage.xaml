@@ -1,43 +1,44 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<ContentPage  xmlns:local="clr-namespace:ConstantinCristinaLab7"
-    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+<ContentPage xmlns:local="clr-namespace:ConstantinCristinaLab7"
+             xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ConstantinCristinaLab7.ListPage"
-             Title="ListPage">
-<StackLayout Margin="20">
-        <Editor Placeholder="Enter the description of the shopping list" 
+             Title="List">
+    <StackLayout Margin="20" Padding="10" Spacing="20">
+       <Editor Placeholder="Enter the description of the shopping list" 
                 Text="{Binding Description}" 
-                HeightRequest="50" >
-            <Editor.Behaviors>
-                <local:ValidationBehaviour />
-            </Editor.Behaviors>
-        </Editor>
+                HeightRequest="50" 
+                BackgroundColor="White" 
+                TextColor="Black" />
+
+        <Picker x:Name="ShopPicker" Title="Enter Shop Name" HeightRequest="50" />
+
         <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
-            <Button Text="Save" 
-                    Clicked="OnSaveButtonClicked" />
-            <Button Grid.Column="1" 
-                    Text="Delete" 
-                    Clicked="OnDeleteButtonClicked"/>
-            
+
+            <Button Text="Save" Grid.Row="0" Grid.Column="0" HeightRequest="50" Clicked="OnSaveButtonClicked" />
+
+            <Button Text="Add/Choose Item to buy" Grid.Row="0" Grid.Column="1" HeightRequest="50" Clicked="OnChooseButtonClicked" />
+
+            <Button Text="Delete Item" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" HeightRequest="50" Clicked="OnDeleteItemButtonClicked" />
         </Grid>
-        <Button Text="Add/Choose Item to buy" MaximumWidthRequest="300" 
-         Clicked="OnChooseButtonClicked"/>
-        <ListView  x:Name="listView"  
-              Margin="20">
+
+        <ListView x:Name="listView" ItemsSource="{Binding Items}" Margin="20">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <TextCell  Detail="{Binding Description}" />
+                    <TextCell Text="{Binding ItemName}" Detail="{Binding Description}" />
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-     
-        <Button Text="Delete Item"
-            MaximumWidthRequest="300"
-            Clicked="OnDeleteItemButtonClicked" />
-    </StackLayout>
 
+    </StackLayout>
 </ContentPage>

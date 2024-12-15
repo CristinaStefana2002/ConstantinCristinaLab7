@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ConstantinCristinaLab7.ShopPage"
+             Title="ShopPage">
+    <ContentPage.Content>
+        <StackLayout Margin="20" Padding="10">
+            <Editor Placeholder="Enter shop name" Margin="20" 
+                    Text="{Binding ShopName}" 
+                    HeightRequest="50" />
+
+            <Editor Placeholder="Enter shop adress" Margin="20" 
+                    Text="{Binding Adress}" 
+                    HeightRequest="50" />
+
+            <StackLayout Orientation="Vertical" Spacing="10">
+                <Button Text="Save Shop" 
+                        Clicked="OnSaveButtonClicked" 
+                        HeightRequest="50"/>
+
+                <Button Text="Delete Shop" 
+                        Clicked="OnDeleteButtonClicked" 
+                        HeightRequest="50"/>
+
+                <Button Text="Show on Map" 
+                        Clicked="OnShowMapButtonClicked" 
+                        HeightRequest="50"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

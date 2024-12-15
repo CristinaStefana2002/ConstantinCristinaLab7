@@ -5,10 +5,11 @@
              x:Class="ConstantinCristinaLab7.App">
     <Application.Resources>
         <ResourceDictionary>
-            <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="Resources/Styles/Colors.xaml" />
-                <ResourceDictionary Source="Resources/Styles/Styles.xaml" />
-            </ResourceDictionary.MergedDictionaries>
+            <Style TargetType="Picker">
+                <Setter Property="HeightRequest" Value="50"/>
+                <Setter Property="WidthRequest" Value="300"/>
+            </Style>
         </ResourceDictionary>
     </Application.Resources>
+
 </Application>
